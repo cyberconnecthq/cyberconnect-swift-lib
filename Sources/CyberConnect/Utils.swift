@@ -8,7 +8,7 @@
 import Foundation
 import CryptoKit
 
-struct Utils {
+public struct Utils {
     static let shared = Utils()
     func retriveCyberConnectSignKey(address: String) -> P256.Signing.PrivateKey? {
         let key = getKey(address: address)
@@ -35,7 +35,7 @@ struct Utils {
     }
 }
 
-func onMainThread(_ closure: @escaping () -> Void) {
+public func onMainThread(_ closure: @escaping () -> Void) {
     if Thread.isMainThread {
         closure()
     } else {

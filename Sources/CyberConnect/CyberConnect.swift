@@ -21,27 +21,27 @@ enum SignResult: String, CaseIterable {
 
 public struct CyberConnect {
     var address: String
-    func connect(toAddress: String, alias: String, network: NetworkType, connectType: ConnectionType = .follow, compeletion: @escaping CompleteionBlock) {
+    public func connect(toAddress: String, alias: String, network: NetworkType, connectType: ConnectionType = .follow, compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().connect(fromAddress: address, toAddress: toAddress, alias: alias, network: network, connectType: connectType, compeletion: compeletion)
     }
     
-    func disconnect(toAddress: String, alias: String, network: NetworkType, compeletion: @escaping CompleteionBlock) {
+    public func disconnect(toAddress: String, alias: String, network: NetworkType, compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().disconnect(fromAddress: address, toAddress: toAddress, alias: alias, network: network, compeletion: compeletion)
     }
     
-    func alias(toAddress: String, alias: String, network: NetworkType, compeletion: @escaping CompleteionBlock) {
+    public func alias(toAddress: String, alias: String, network: NetworkType, compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().setAlias(fromAddress: address, toAddress: toAddress, alias: alias, network: network, compeletion: compeletion)
     }
     
-    func getBatchConnections(toAddresses: [String], compeletion: @escaping CompleteionBlock) {
+    public func getBatchConnections(toAddresses: [String], compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().getBatchConnections(fromAddress: address, toAddresses: toAddresses, compeletion: compeletion)
     }
     
-    func getIdentity(completion: @escaping CompleteionBlock) {
+    public func getIdentity(completion: @escaping CompleteionBlock) {
         NetworkRequestManager().getIdentity(address: address, completion: completion)
     }
     
-    func registerKey(signature: String, network: NetworkType, completion: @escaping CompleteionBlock) {
+    public func registerKey(signature: String, network: NetworkType, completion: @escaping CompleteionBlock) {
         NetworkRequestManager().registerKey(address: address, signature: signature, network: network, completion: completion)
     }
 }
