@@ -1,2 +1,3 @@
-# cyberconnect-swift-lib
-This is a lib for iOS native developer, written in swift
+# CyberConnect
+
+A description of this package.
