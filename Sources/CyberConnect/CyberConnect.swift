@@ -19,7 +19,7 @@ enum SignResult: String, CaseIterable {
     case success = "SUCCESS"
 }
 
-struct CyberConnect {
+public struct CyberConnect {
     var address: String
     public init(address: String) {
         self.address = address
