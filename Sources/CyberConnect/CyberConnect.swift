@@ -19,7 +19,7 @@ enum SignResult: String, CaseIterable {
     case success = "SUCCESS"
 }
 
-struct CyberConnect {
+public struct CyberConnect {
     var address: String
     func connect(toAddress: String, alias: String, network: NetworkType, connectType: ConnectionType = .follow, compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().connect(fromAddress: address, toAddress: toAddress, alias: alias, network: network, connectType: connectType, compeletion: compeletion)
