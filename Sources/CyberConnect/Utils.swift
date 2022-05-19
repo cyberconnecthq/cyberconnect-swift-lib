@@ -11,7 +11,7 @@ import CryptoKit
 public struct Utils {
     public static let shared = Utils()
     public init() {}
-    func retriveCyberConnectSignKey(address: String) -> P256.Signing.PrivateKey? {
+    public func retriveCyberConnectSignKey(address: String) -> P256.Signing.PrivateKey? {
         let key = getKey(address: address)
         do {
             guard let result: P256.Signing.PrivateKey = try SecurityKeyStore().readKey(label: key) else {
@@ -25,10 +25,6 @@ public struct Utils {
             print(error)
         }
         return nil
-    }
-
-    func getAuthorizeString(localPublicKeyPem: String) -> String {
-        return "I authorize CyberConnect from this device using signing key:\n\(localPublicKeyPem)"
     }
     
     private func getKey(address: String) -> String {
