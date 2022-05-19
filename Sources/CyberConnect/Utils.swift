@@ -42,7 +42,7 @@ public func onMainThread(_ closure: @escaping () -> Void) {
     }
 }
 
-extension String {
+public extension String {
     func pemRepresentationContent()-> String? {
         var components = self.components(separatedBy: "\n")
         if components.count > 3 {
