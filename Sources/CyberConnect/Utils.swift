@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 
 public struct Utils {
-    static let shared = Utils()
+    public static let shared = Utils()
     public init() {}
     func retriveCyberConnectSignKey(address: String) -> P256.Signing.PrivateKey? {
         let key = getKey(address: address)

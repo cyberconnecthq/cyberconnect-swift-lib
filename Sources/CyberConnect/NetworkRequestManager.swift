@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 import Security
 
-typealias CompleteionBlock = (_ data:NSDictionary)->Void;
+public typealias CompleteionBlock = (_ data:NSDictionary)->Void;
 struct NetworkRequestManager {
     
     func getBatchConnections(fromAddress: String, toAddresses: [String], compeletion: @escaping CompleteionBlock) {
@@ -155,7 +155,7 @@ struct OperationInputData: Codable {
     var variables: Input
 }
 
-enum NetworkType: String, CaseIterable, Codable {
+public enum NetworkType: String, CaseIterable, Codable {
     case eth = "ETH"
     case sol = "SOL"
 }
