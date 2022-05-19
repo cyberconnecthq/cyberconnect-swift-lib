@@ -26,6 +26,10 @@ public struct Utils {
         }
         return nil
     }
+
+    public func getAuthorizeString(localPublicKeyPem: String) -> String {
+        return "I authorize CyberConnect from this device using signing key:\n\(localPublicKeyPem)"
+    }
     
     private func getKey(address: String) -> String {
         return "CyberConnectKey_\(address)"
