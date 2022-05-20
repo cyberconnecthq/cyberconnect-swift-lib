@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CryptoKit
+
 public enum ConnectionType: String, CaseIterable {
     case follow = "follow"
     case like = "like"
@@ -46,5 +48,13 @@ public struct CyberConnect {
     
     public func registerKey(signature: String, network: NetworkType, completion: @escaping CompleteionBlock) {
         NetworkRequestManager().registerKey(address: address, signature: signature, network: network, completion: completion)
+    }
+    
+    public func retriveCyberConnectSignKey(address: String) -> P256.Signing.PrivateKey? {
+        return Utils.shared.retriveCyberConnectSignKey(address: address)
+    }
+    
+    public func getAuthorizeString(localPublicKeyPem: String) -> String {
+        return Utils.shared.getAuthorizeString(localPublicKeyPem: localPublicKeyPem)
     }
 }
