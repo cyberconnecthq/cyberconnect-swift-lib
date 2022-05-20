@@ -9,7 +9,7 @@ import Foundation
 import CryptoKit
 import Security
 
-public typealias CompleteionBlock = (_ data:NSDictionary)->Void;
+public typealias CompleteionBlock = (_ data: Data)->Void;
 struct NetworkRequestManager {
     
     func getBatchConnections(fromAddress: String, toAddresses: [String], compeletion: @escaping CompleteionBlock) {
@@ -132,12 +132,10 @@ struct NetworkRequestManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            do {
-                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    completionHandler(jsonResult)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
+            if let dataItem = data {
+                completionHandler(dataItem)
+            } else {
+                print("response nil")
             }
         }.resume()
     }
