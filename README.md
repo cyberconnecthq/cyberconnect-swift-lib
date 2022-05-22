@@ -95,4 +95,4 @@ cyberConnectInstance.alias(toAddress: TARGETADDRESS, alias: ALIAS, network: NETW
 
 We are happy to accept all kind of contributions, feel free to open issue or pull requests, you can also post your questions in our [Discord Channel](https://discord.gg/cyberconnect)
 
-For other tech info refer to our [dev center](https://docs.cyberconnect.me): 
+For other tech info refer to our [dev center](https://docs.cyberconnect.me).
