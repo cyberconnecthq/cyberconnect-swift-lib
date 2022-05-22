@@ -53,6 +53,46 @@ cyberConnectInstance.connect(toAddress: SOMEONESADDRESS, alias: ALIAS, network: 
 
 - `toAddress` - The target wallet address to connect.
 - `alias` - (optional) Alias for the target address.
-- `network` - (optional) enum type for network, now support ETH and Solana
+- `network` - (optional) enum type for network, now support ETH and Solana.
 - `connectionType` - (optional) The type of the connection. The default value is `Connection.FOLLOW`. See [Connection Type](#ConnectionType) for more details.
 
+#### Disconnect
+
+```swift
+cyberConnectInstance.disconnect(toAddress: TAEGETADDERSS, alias: ALIAS, network: NETWOEKTYPE) { data in
+        print(data)
+}
+```
+
+- `toAddress` - The target wallet address to disconnect.
+- `alias` - (optional) Alias for the target address.
+- `network` - (optional) enum type for network, now support ETH and Solana.
+
+#### GetBatchConnectStatus
+
+```swift
+cyberConnectInstance.getBatchConnections(toAddresses: ADDRESSARRAY) { data in
+        print(data)
+}
+```
+
+- `toAddresses` - A list of wallet addresses to connect.
+
+#### SetAlias
+
+```swift
+cyberConnectInstance.alias(toAddress: TARGETADDRESS, alias: ALIAS, network: NETWORKTYPE) { data in
+        print(data)
+}
+```
+
+- `toAddress` - The target wallet address to disconnect.
+- `alias` - The alias for the target address.
+- `network` - (optional) enum type for network, now support ETH and Solana.
+
+
+## Contributing
+
+We are happy to accept all kind of contributions, feel free to open issue or pull requests, you can also post your questions in our [Discord Channel](https://discord.gg/cyberconnect)
+
+For other tech info refer to our [dev center](https://docs.cyberconnect.me): 
