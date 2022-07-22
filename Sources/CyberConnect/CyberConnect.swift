@@ -25,6 +25,11 @@ public struct CyberConnect {
     var address: String
     public init(address: String) {
         self.address = address
+        let userDefaults = UserDefaults.standard
+        if !userDefaults.bool(forKey: "CyberConnectActivated") {
+            Utils().deleteKey(address: address)
+            userDefaults.set(true, forKey: "CyberConnectActivated")
+        }
     }
     public func connect(toAddress: String, alias: String, network: NetworkType, connectType: ConnectionType = .follow, compeletion: @escaping CompleteionBlock) {
         NetworkRequestManager().connect(fromAddress: address, toAddress: toAddress, alias: alias, network: network, connectType: connectType, compeletion: compeletion)

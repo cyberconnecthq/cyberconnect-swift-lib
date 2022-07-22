@@ -34,6 +34,15 @@ struct Utils {
     private func getKey(address: String) -> String {
         return "CyberConnectKey_\(address)"
     }
+    
+    func deleteKey(address: String) {
+        let key = getKey(address: address)
+        do {
+            try SecurityKeyStore().deleteKey(label: key)
+        } catch {
+            print(error)
+        }
+    }
 }
 
 public func onMainThread(_ closure: @escaping () -> Void) {
