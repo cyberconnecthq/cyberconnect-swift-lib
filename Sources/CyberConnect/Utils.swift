@@ -15,7 +15,6 @@ struct Utils {
         let key = getKey(address: address)
         do {
             guard let result: P256.Signing.PrivateKey = try SecurityKeyStore().readKey(label: key) else {
-                //if can't find key in keychain, generate a new one
                 let privateKey = P256.Signing.PrivateKey()
                 try SecurityKeyStore().storeKey(privateKey, label: key)
                 return privateKey
