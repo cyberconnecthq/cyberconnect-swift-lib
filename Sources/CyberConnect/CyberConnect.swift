@@ -61,6 +61,16 @@ public struct CyberConnect {
         return Utils.shared.retriveCyberConnectSignKey(address: address)
     }
     
+    public func isCyberConnectActivated() -> Bool {
+        let userDefaults = UserDefaults.standard
+        return userDefaults.bool(forKey: "CyberConnectActivated")
+    }
+    
+    public func refreshCyberConnectStatus() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: "CyberConnectActivated")
+    }
+    
     public func getAuthorizeString(localPublicKeyPem: String) -> String {
         return Utils.shared.getAuthorizeString(localPublicKeyPem: localPublicKeyPem)
     }
