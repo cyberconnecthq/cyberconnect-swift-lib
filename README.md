@@ -91,7 +91,7 @@ cyberConnectInstance.alias(toAddress: TARGETADDRESS, alias: ALIAS, network: NETW
 - `network` - (optional) enum type for network, now support ETH and Solana.
 
 
-#### Check if CyberConnect is acticated after installing
+#### Check if CyberConnect is activated after installing
 ```swift
 let cyberConnectStatus = cyberConnectInstance.isCyberConnectActivated()
 ```
