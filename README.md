@@ -91,6 +91,16 @@ cyberConnectInstance.alias(toAddress: TARGETADDRESS, alias: ALIAS, network: NETW
 - `network` - (optional) enum type for network, now support ETH and Solana.
 
 
+#### Check if CyberConnect is acticated after installing
+```swift
+let cyberConnectStatus = cyberConnectInstance.isCyberConnectActivated()
+```
+
+#### Refresh status of CyberConnect, which means it will use new generate keypairs
+```swift
+cyberConnectInstance.refreshCyberConnectStatus()
+```
+
 ## Contributing
 
 We are happy to accept all kind of contributions, feel free to open issue or pull requests, you can also post your questions in our [Discord Channel](https://discord.gg/cyberconnect)
